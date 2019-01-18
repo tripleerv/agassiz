@@ -1,0 +1,29 @@
+{
+  "name": "agassiz",
+  "version": "0.0.1",
+  "author": "Triple E RV <marketing@leisurevans.com>",
+  "license": "MIT",
+  "workspaces": [
+    "core/components"
+  ],
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.3",
+    "@storybook/addon-links": "^4.1.3",
+    "@storybook/addons": "^4.1.3",
+    "@storybook/cli": "^4.1.3",
+    "@storybook/react": "^4.1.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.10.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.15.3"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}

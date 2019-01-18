@@ -1,0 +1,10 @@
+{
+  "name": "@tripleerv/agassiz-standards",
+  "description": "Standard options for Triple E Agassiz Design System",
+  "version": "0.0.1",
+  "repository": "tripleerv/agassiz",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Triple E RV <marketing@leisurevans.com",
+  "license": "MIT"
+}
