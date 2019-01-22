@@ -1,14 +1,14 @@
 {
   "name": "@tripleerv/agassiz",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A component library for brands of Triple E RV.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "tripleerv/agassiz",
   "author": "Triple E RV <marketing@tripleerv.com>",
   "license": "MIT",
-  "private": true,
   "devDependencies": {},
   "dependencies": {
+    "@tripleerv/agassiz-standards": "^0.0.1",
     "styled-components": "^4.1.3"
   },
   "peerDependencies": {
