@@ -1,0 +1,3 @@
+{
+  "presets": ["@tripleerv/babel-preset-agassiz"]
+}
