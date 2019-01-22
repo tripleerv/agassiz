@@ -1,0 +1,17 @@
+{
+  "name": "@tripleerv/babel-preset-agassiz",
+  "description": "Babel preset for Triple E Agassiz Design System",
+  "version": "0.0.2",
+  "repository": "tripleerv/agassiz",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Triple E RV <marketing@leisurevans.com",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-styled-components": "^1.10.0"
+  }
+}
