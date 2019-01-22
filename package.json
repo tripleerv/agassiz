@@ -1,21 +1,25 @@
 {
   "name": "agassiz",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Triple E RV <marketing@leisurevans.com>",
   "license": "MIT",
   "workspaces": [
-    "core/components"
+    "core/components",
+    "core/standards",
+    "core/babel-preset"
   ],
   "private": true,
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
+    "@babel/runtime": "^7.3.0",
     "@storybook/addon-actions": "^4.1.3",
     "@storybook/addon-links": "^4.1.3",
     "@storybook/addons": "^4.1.3",
     "@storybook/cli": "^4.1.3",
     "@storybook/react": "^4.1.3",
     "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^8.0.5",
     "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.0",
@@ -24,6 +28,9 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build:components": "babel --presets=./core/babel-preset/index.js core/components -d core/components/dist --ignore /node_modules/",
+    "build:standards": "babel --presets=./core/babel-preset/index.js core/standards -d core/standards/dist --ignore /node_modules/",
+    "build": "npm run build:standards && npm run build:components"
   }
 }
