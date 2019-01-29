@@ -30,7 +30,6 @@ const BaseHeading = styled.h1`
 
 const Heading = props => {
   const Component = Heading.Element[props.size]
-  console.log(props)
   return (
     <Component {...props} decorated={props.decorated}>
       {props.children}

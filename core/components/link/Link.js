@@ -1,0 +1,33 @@
+import React from 'react'
+import propTypes from 'prop-types'
+import styled from 'styled-components'
+
+import { colours } from '@tripleerv/agassiz-standards'
+
+const Link = props => <Link.Element {...props}>{props.children}</Link.Element>
+
+Link.Element = styled.a`
+  color: ${colours.base.green};
+  text-decoration: none;
+  &:hover {
+    color: ${colours.link.defaultHover};
+  }
+`
+
+const StyledLink = Link.Element
+
+Link.propTypes = {
+  /** URL to follow */
+  href: propTypes.string,
+  /** specifies where to open the linked document */
+  target: propTypes.oneOf(['_blank', '_self', '_parent', '_top']),
+  /** function to be called on click */
+  onClick: propTypes.func,
+}
+
+Link.defaultProps = {
+  target: '_self',
+}
+
+export default Link
+export { StyledLink }

@@ -1,3 +1,3 @@
-import { Button, Heading } from './components'
+import { Button, Heading, Paragraph, Link, TextInput, FilterSelect } from './components'
 
-export { Button, Heading }
+export { Button, Heading, Paragraph, Link, TextInput, FilterSelect }
