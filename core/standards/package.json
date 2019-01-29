@@ -3,7 +3,7 @@
   "description": "Standard options for Triple E Agassiz Design System",
   "version": "0.0.2",
   "repository": "tripleerv/agassiz",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {},
   "author": "Triple E RV <marketing@leisurevans.com",
   "license": "MIT",
