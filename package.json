@@ -32,5 +32,9 @@
     "build:components": "babel --presets=./core/babel-preset/index.js core/components -d core/components/dist --ignore /node_modules/",
     "build:standards": "babel --presets=./core/babel-preset/index.js core/standards -d core/standards/dist --ignore /node_modules/",
     "build": "npm run build:standards && npm run build:components"
+  },
+  "resolutions": {
+    "lodash": "^4.17.12",
+    "braces": "^2.3.1"
   }
 }
