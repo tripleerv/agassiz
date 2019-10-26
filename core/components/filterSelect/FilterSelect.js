@@ -28,7 +28,7 @@ const FilterSelect = props => {
   return (
     <FilterSelect.Element onClick={onOpen} open={open} {...props}>
       <List open={open}>
-        <Item.Placeholder>{newPlaceholder}</Item.Placeholder>
+        <Item.Placeholder open={open}>{newPlaceholder}</Item.Placeholder>
         {open &&
           options.map((option, idx) => (
             <Item key={idx} id={idx} selected={selected} onClick={() => onSelectItem(option, idx)}>
@@ -40,12 +40,14 @@ const FilterSelect = props => {
   )
 }
 
-FilterSelect.Element = styled.div`
+FilterSelect.Element = styled.nav`
   position: relative;
-  z-index: 3;
+  z-index: 5;
   height: 40px;
-  width: 200px;
+  width: 100%;
+  max-width: 350px;
   cursor: pointer;
+  margin: 0 auto 2rem;
   font-family: ${fonts.primary.family};
 
   &::after {
@@ -67,6 +69,14 @@ FilterSelect.Element = styled.div`
     pointer-events: none;
   }
 
+  @media only screen and (min-width: 1024px) {
+    width: auto;
+    height: auto;
+    cursor: auto;
+    text-align: center;
+    max-width: none;
+  }
+
 `
 
 const List = styled.ul`
@@ -75,15 +85,25 @@ const List = styled.ul`
   left: 0;
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 350px;
   background: ${colours.base.greyLightest};
   list-style: none;
   box-shadow: ${props => (props.open ? `0 4px 20px ${colours.base.boxShadow}` : 'none')};
+
+  @media (min-width: 1024px) {
+    display: inline-block;
+    position: static;
+    width: auto;
+    max-width: none;
+    background: none;
+    border-bottom: 1px solid ${colours.base.greyLight};
+  }
 `
 
 const Item = styled.li`
   display: block;
   height: 40px;
-  width: 200px;
   line-height: 40px;
   padding-left: 1em;
   font-weight: ${fonts.primary.weight.medium};
@@ -94,13 +114,22 @@ const Item = styled.li`
   &:hover {
     color: ${props => (props.selected == props.id ? colours.base.greyLightest : colours.base.green)};
   }
+
+  @media (min-width: 1024px) {
+    display: inline-block;
+    margin-right: 0;
+  }
 `
 
 Item.Placeholder = styled(Item)`
-  color: ${colours.base.green};
+  color: ${props => (props.open ? colours.base.greyLight : colours.base.greyMedium)};
   background: ${colours.base.greyLightest};
   &:hover {
-    color: ${colours.base.green};
+    color: ${props => (props.open ? colours.base.greyLight : colours.base.greyMedium)};
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
   }
 `
 

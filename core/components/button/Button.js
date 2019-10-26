@@ -119,7 +119,7 @@ Button.Element = styled.button`
   font-weight: ${fonts.primary.weight.semiBold};
 
   background: ${props => getAttributes(props).background};
-  border: 2px solid ${props => getAttributes(props).border};
+  border: ${props => (props.appearance === 'primary' ? 'none' : `2px solid ${getAttributes(props).border}`)};
   border-color: ${props => getAttributes(props).border};
   box-sizing: border-box;
   border-radius: ${misc.radius};
@@ -139,19 +139,19 @@ Button.Element = styled.button`
   &:hover {
     color: ${props => getAttributes(props).hoverText || getAttributes(props).text};
     background: ${props => getAttributes(props).hoverBackground};
-    border: 2px solid ${props => getAttributes(props).hoverBorder};
+    border: ${props => (props.appearance === 'primary' ? 'none' : `2px solid ${getAttributes(props).hoverBorder}`)};
   }
   &:focus {
     color: ${props => getAttributes(props).hoverText};
     background: ${props => getAttributes(props).focusBackground};
-    border: 2px solid ${props => getAttributes(props).focusBorder};
+    border: ${props => (props.appearance === 'primary' ? 'none' : `2px solid ${getAttributes(props).focusBorder}`)};
     outline: none;
   }
   &:active {
     color: ${props => getAttributes(props).hoverText};
     background: ${props => getAttributes(props).activeBackground};
     border-color: ${props => getAttributes(props).activeBorder};
-    box-shadow: inset 0 0 0 1px ${props => getAttributes(props).activeBorder};
+    border: ${props => (props.appearance === 'primary' ? 'none' : `2px solid ${getAttributes(props).activeBorder}`)};
     outline: none;
   }
 `
